@@ -1,0 +1,42 @@
+
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Галерея</title>
+        <style> body {background-color: #FFB6C1;font-family: Arial, sans-serif;display: flex;flex-direction: column;align-items: center;justify-content: center;height: 100vh;margin: 0;padding: 0 20px;}
+            h1 {color: #8B0000;font-size: 48px;margin: 20px 0;text-align: center;}
+            h2 {color: #8B008B;font-size: 36px;text-align: center;}
+            .start-link {color: blue;font-size: 24px;cursor: pointer;text-decoration: underline;margin-top: 30px;text-align: center;}
+            .start-link:hover {color: #FF4500;}
+            .cake-container {text-align: center;max-width: 800px;margin: auto;}
+            #cake-image {max-width: 100%;height: auto;margin-bottom: 20px;border: 5px solid #FFFACD;border-radius: 10px;max-height: 300px;width: 95%;height: 400px;}
+            #cake-description {text-align: justify;background-color: #E0FFFF;padding: 20px;border-radius: 10px;margin: auto;max-width: 600px;width: 90%;height: 240px;overflow-y: auto;}
+            button {background-color: #FFB6C1;border: none;padding: 10px 20px;font-size: 16px;cursor: pointer;margin: 10px;border-radius: 5px;transition: background-color 0.3s;}
+            button:hover {background-color: #FF69B4;}
+        </style>
+        <script>var galleryData = [{'name': 'Три шоколада', 'image': 'C:/Users/tolma/Desktop/lab02-03/BD Торта\\Три шоколада.png', 'description': 'Рецепт торта «Три шоколада»\nИнгредиенты:Куриное яйцо — 4 шт.\nМолочный шоколад — 80 г, Горький шоколад — 80 г,Белый шоколад — 80 г\n33 % сливки — 600 мл\nСахар — 300 г\nПшеничная мука высшего сорта — 120 г\nМолоко — 380 мл\nРастительное масло — 70 мл\nКакао-порошок — 30 г\nЖелатин — 24 г\nКукурузный крахмал — 30 г\nРазрыхлитель — 1,5 ч. л.\nВода — 150 мл\n'}, {'name': 'Наполеон', 'image': 'C:/Users/tolma/Desktop/lab02-03/BD Торта\\Наполеон.png', 'description': 'Для теста:\n— Маргарин для выпечки или масло — 400 г;\n— Яйцо — 1 шт.;\n— Мука — 700 г;\n— Ледяная вода — 150 мл;\n— Соль — 1 щепотка.\nДля заварного крема:\n— Молоко — 1 л;\n— Сахар — 1,5 стакана;\n— Яйцо — 2 шт.;\n— Мука — 3 ст. л.;\n— Сливочное масло — 200 г;\n— Ванильный сахар — 5 г.\n'}, {'name': 'Захер', 'image': 'C:/Users/tolma/Desktop/lab02-03/BD Торта\\Захер.png', 'description': 'Яйца - 6 шт.\nШоколад чёрный 72% - 135 г\nМасло сливочное - 135 г\nПудра сахарная - 45 г\nСахар - 180 г\nВанильный сахар - 1 пакетик\nМука - 135 г\nДля глазури:\nСливки - 200 г\nШоколад чёрный 72% - 350 г\nМасло сливочное - 30 г\nДля начинки:\nДжем - 200 г\nВода - 15 мл\nКоньяк - 50 мл'}, {'name': 'Муссовый', 'image': 'C:/Users/tolma/Desktop/lab02-03/BD Торта\\Муссовый.png', 'description': 'рецепт шоколадного муссового торта с зеркальной глазурью:\nИнгредиенты:\n2 листа желатина;\n1/3 стакана молока;\n400 мл сливок;\n400 г сметаны;\n250 г сахарной пудры;\n100 г шоколада;\n50 мл воды;\n140 г сахара;\n45 г какао.\n'}, {'name': 'Тирамиссу', 'image': 'C:/Users/tolma/Desktop/lab02-03/BD Торта\\Тирамиссу.png', 'description': 'Ингредиенты на 4 порции:\nяйца — 5 шт.;\nсахар — 125 г;\nмаскарпоне — 250 г;\nсливки (от 30 %) — 325 г;\nэспрессо — 300 мл;\nпеченье савоярди — 40 шт.;\nкакао — по вкусу.\n'}, {'name': 'Муравейник', 'image': 'C:/Users/tolma/Desktop/lab02-03/BD Торта\\Муравейник.png', 'description': 'Рецепт торта «Муравейник»\nИнгредиенты:\nсливочное масло — 200 г;\nсахар — 100 г;\nяйцо — 1 шт.;\nсметана 20 % — 100 г;\nмука — 450 г;\nразрыхлитель — 10 г;\nварёная сгущёнка — 360 г;\nсливочное масло — 100 г;\nарахис — 30 г;\nмак — 2 г.\n'}, {'name': 'Цифра', 'image': 'C:/Users/tolma/Desktop/lab02-03/BD Торта\\Цифра.png', 'description': 'Медовый коржи для торта\nЯйцо 50 гр (обычно 1 яйцо 1с столько и весит)\nМед 62 гр\nСахар 63 гр\nСливочное масло 50 гр\nСода 4 гр\nМука 210 гр\nУксус 3 гр\nКРЕМ ЧИЗ НА СЛИВКАХ\nТворожный сыр 350 гр\nСливки 33-35 % 150 гр\nСахар 50 гр'}, {'name': 'Карамельный', 'image': 'C:/Users/tolma/Desktop/lab02-03/BD Торта\\Карамельный.png', 'description': 'Состав / Ингредиенты: \nСахар 170\nГрамм Мука 170 \nГрамм Разрыхлитель 1 \nЧайная ложка Крахмал 2 Ст. ложки \nЯйца 5 Штук \nВареная сгущенка 1 Штука (банка) \nАрахис 200 Грамм \nСливочное масло 250 Грамм (200г в крем, 50г для глазури) \nСливочный крекер 150 Грамм \nЧерный шоколад 150 Грамм \nРубленый арахис 150 Грамм'}, {'name': 'Морковный', 'image': 'C:/Users/tolma/Desktop/lab02-03/BD Торта\\Морковный.png', 'description': 'Ингредиенты:\nяйца — 2 шт.;\nморковь тёртая — 130 г;\nсахар коричневый — 130 г;\nорехи грецкие — 80 г;\nмасло растительное без запаха — 110 г;\nмука — 130 г;\nразрыхлитель — 1 ч. л.;\nмускатный орех — щепотка;\nцедра апельсина или лимона — 2 ч. л.;\nсок лимона — 20 мл.\nДля крема:\nсливки (для взбивания) — 150 мл;\nмаскарпоне — 250 г;\nсахарная пудра — по вкусу;\nванилин — 1 г.'}, {'name': 'Чизкейк', 'image': 'C:/Users/tolma/Desktop/lab02-03/BD Торта\\Чизкейк.png', 'description': 'Печенье - 300 г\nМасло сливочное (размягченное) - 80 г\nСыр сливочный - 600 г\nСливки 33% - 200 г\nЯйца - 3 шт.\nПудра сахарная - 150 г\nВанильная эссенция или экстракт - несколько капель'}];
+            var currentIndex = 0; function showCake(index) {currentIndex = index; document.getElementById('cake-title').innerText = galleryData[index].name; document.getElementById('cake-image').src = galleryData[index].image;
+                document.getElementById('cake-description').innerText = galleryData[index].description;
+                document.getElementById('gallery-start').style.display = 'none';
+                document.getElementById('cake-container').style.display = 'block';}
+            function nextCake() {currentIndex = (currentIndex + 1) % galleryData.length;
+                showCake(currentIndex);}
+            function prevCake() {currentIndex = (currentIndex - 1 + galleryData.length) % galleryData.length;
+                showCake(currentIndex);}
+        </script>
+    </head>
+    <body> 
+        <div id="gallery-start" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+            <h1>ГАЛЕРЕЯ</h1>
+            <h2>ТОРТЫ</h2>
+            <p class="start-link" onclick="showCake(0)">НАЧАТЬ ПРОСМОТР БД ТОРТОВ</p>
+        </div>
+        <div id="cake-container" class="cake-container" style="display: none;">
+            <h1 id="cake-title"></h1>
+            <img id="cake-image" src="" alt="Торт">
+            <p id="cake-description"></p>
+            <button onclick="prevCake()">Назад</button>
+            <button onclick="nextCake()">Вперёд</button></div>
+    </body>
+    </html>
